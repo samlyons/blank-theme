@@ -4,7 +4,7 @@
 		<div id="main" class="site-main" role="main">
 			<?php if( have_rows('flexible_layout') ): // Flexible Content ?>
 				<?php while( have_rows('flexible_layout') ): the_row(); // Flexible Content ?>
-					
+
 					<?php if( get_row_layout() == 'columns_three_layout' ): // Layout: Columns x3 ?>
 						<?php $i = 1; if(have_rows('columns_three')): while(have_rows('columns_three')):the_row(); // Repeater ?>
 							<div class="wrap">
@@ -27,7 +27,7 @@
 							<div class="pods">
 								<?php $i = 0; if(have_rows('pod')): while(have_rows('pod')):the_row(); // Repeater ?>
 									<?php $bg_image = get_sub_field('background_image'); ?>
-									<a class="pod pod-position-<?php echo $i //Counter ?>" style="background: url(<?php echo $bg_image['url']; ?>) 0 0 no-repeat;" href="<?php the_sub_field('link');?>">				            
+									<a class="pod pod-position-<?php echo $i //Counter ?>" style="background: url(<?php echo $bg_image['url']; ?>) 0 0 no-repeat;" href="<?php the_sub_field('link');?>">
 										<span class="vcenter">
 											<span class="title"><?php the_sub_field('title');?></span>
 											<span class="text knockout"><?php the_sub_field('text');?></span>
@@ -54,7 +54,7 @@
 									<?php endwhile; endif; ?>
 				                </ul>
 				            </div>
-				        </div>					
+				        </div>
 
 					<?php elseif(get_row_layout() == 'instagram' ): // Layout: Instagram ?>
 						<div class="wrap" id="<?php the_sub_field('power');?>">
@@ -103,14 +103,14 @@
 							    'order' => 'DESC',
 							    'posts_per_page' => $numposts,
 							    'paged' => get_query_var('paged') ? get_query_var('paged') : 1 )
-							  ); 
+							  );
 							if ($mynewloop->have_posts()) : while ($mynewloop->have_posts()) : $mynewloop->the_post();
 							?>
 							<?php the_post_thumbnail( 'large' ); ?>
 							<a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
-						<?php endwhile; endif; wp_reset_postdata(); ?> 
+						<?php endwhile; endif; wp_reset_postdata(); ?>
 						</div>
-						
+
 					<?php endif; // End Ifs ?>
 
 				<?php endwhile; // End Flexible Content ?>
