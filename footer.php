@@ -1,5 +1,4 @@
 </div><!-- #content -->
-
 		<div id="footer">
 			<div class="wrap">
 
